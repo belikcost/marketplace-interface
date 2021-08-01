@@ -1,0 +1,11 @@
+.products-container {
+  h1 {
+    margin-top: 2rem;
+    font-size: 28px;
+  }
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 26px 20px;
+}
