@@ -40,7 +40,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'bundle.js'
+        filename: '[name].bundle.js'
     },
     watchOptions: {
         aggregateTimeout: 600,
@@ -55,5 +55,7 @@ module.exports = {
             "React": "react",
         }),
     ],
-    mode: "production"
+    devServer: {
+        historyApiFallback: true,
+    }
 };

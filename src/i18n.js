@@ -13,7 +13,18 @@ const resources = {
             "4customers": "For customers",
             "favorites": "Favorites",
             "cart": "Cart",
-            "hurryUp": "Hurry up to buy"
+            "hurryUp": "Hurry up to buy",
+            "computers": "Computers",
+            "computers2": "Computers 2",
+            "mice": "Mice",
+            "keyboards": "Keyboards",
+            "headphones": "Headphones",
+            "vr": "VR",
+            "accessories": "Accessories",
+            "accessories2": "Accessories 2",
+            "accessories3": "Accessories 3",
+            "popularCategories": "Popular categories",
+            "allCategories": "All categories"
         }
     },
     ru: {
@@ -27,7 +38,18 @@ const resources = {
             "4customers": "Покупателям",
             "favorites": "Избранное",
             "cart": "Корзина",
-            "hurryUp": "Успей купить"
+            "hurryUp": "Успей купить",
+            "computers": "Компьютеры",
+            "computers2": "Компьютеры 2",
+            "mice": "Мыши",
+            "keyboards": "Клавиатуры",
+            "headphones": "Наушники",
+            "vr": "VR",
+            "accessories": "Аксессуары",
+            "accessories2": "Аксессуары 2",
+            "accessories3": "Аксессуары 3",
+            "popularCategories": "Популярные категории",
+            "allCategories": "Все категории"
         }
     }
 };

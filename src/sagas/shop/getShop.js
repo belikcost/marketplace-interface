@@ -1,6 +1,6 @@
 import { call, put, takeEvery } from 'redux-saga/effects'
 import { GET_SHOP_REQUEST } from "../../constants";
-import { getShopFailed, getShopSuccess } from "../../redux/actions";
+import {getShopFailed, getShopSuccess} from "../../redux/actions";
 import API from "../api";
 
 function* getShop() {

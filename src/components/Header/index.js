@@ -1,9 +1,9 @@
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { TopBar } from "./TopBar";
-import { Menu } from "./Menu";
-import { getShopRequest } from "../../redux/actions";
+import Menu from "./Menu";
 import hamburger from '../../img/hamburger.svg';
 import logo from '../../img/logo.svg';
 import user from '../../img/user.svg';
@@ -12,12 +12,12 @@ import shoppingCart from '../../img/shopcart.svg';
 
 const Header = () => {
     const [isShowMenu, setIsShowMenu] = useState(false);
-    const dispatch = useDispatch();
     const shop = useSelector((s) => s.shop);
     const { t } = useTranslation();
-    useEffect(() => {
-        dispatch(getShopRequest());
-    }, [dispatch])
+
+    const handleShowMenu = () => {
+        setIsShowMenu(!isShowMenu);
+    }
 
     console.log(shop);
     return (
@@ -28,11 +28,11 @@ const Header = () => {
                     <div className="main">
                         <div className="main__column">
                             <div className="hamburger">
-                                <img src={hamburger} alt="menu"/>
+                                <img src={hamburger} alt="menu" onClick={handleShowMenu}/>
                             </div>
-                            <a href="/" className="logo">
+                            <Link to="/" className="logo">
                                 <img src={logo} alt="logo"/>
-                            </a>
+                            </Link>
                         </div>
                         <input type="search"/>
                         <ul className="section main__column">
