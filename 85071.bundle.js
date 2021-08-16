@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkplacemik_beta=self.webpackChunkplacemik_beta||[]).push([[85071],{85071:function(e,t){Object.defineProperty(t,"__esModule",{value:!0}),t.default=function(e,t,p,r){return a[e]};var a={lastWeek:"先週のeeeeのp",yesterday:"昨日のp",today:"今日のp",tomorrow:"明日のp",nextWeek:"翌週のeeeeのp",other:"P"};e.exports=t.default}}]);

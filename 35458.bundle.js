@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkplacemik_beta=self.webpackChunkplacemik_beta||[]).push([[35458],{35458:function(e,t){Object.defineProperty(t,"__esModule",{value:!0}),t.default=function(e,t,a,l){return r[e]};var r={lastWeek:"'førre' eeee 'kl.' p",yesterday:"'i går kl.' p",today:"'i dag kl.' p",tomorrow:"'i morgon kl.' p",nextWeek:"EEEE 'kl.' p",other:"P"};e.exports=t.default}}]);
