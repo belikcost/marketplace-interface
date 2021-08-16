@@ -2,7 +2,7 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
 const resources = {
-    en: {
+    'en-US': {
         translation: {
             "signIn": "Sign in",
             "russian": "Russian",
@@ -49,7 +49,52 @@ const resources = {
             "accessories2": "Аксессуары 2",
             "accessories3": "Аксессуары 3",
             "popularCategories": "Популярные категории",
-            "allCategories": "Все категории"
+            "allCategories": "Все категории",
+            "productDetailsInfo": "Информация о технических характеристиках, комплекте поставки, стране изготовления, внешнем виде и цвете товара носит справочный характер и основывается на последних доступных к моменту публикации сведениях.",
+            "reviews": "отзывов",
+            "vendorCode": "Артикул",
+            "favorite": "В избранном",
+            'inStock': "В наличии",
+            "color": "Цвет",
+            "size": "Размер",
+            "white": "Белый",
+            "black": "Черный",
+            "yellow": "Желтый",
+            "notChosen": "Не выбрано",
+            "buyNow": "Купить сейчас",
+            "addToCart": "Добавить в корзину",
+            "productDetails": "О товаре",
+            "productDescription": "Описание",
+            "productReviews": "Отзывы",
+            "doorDelivery": "Доставка до дверей",
+            "returnGuarantee": "Гарантия возврата",
+            "onlinePayment": "Оплата онлайн",
+            "bronze": "Бронзовый",
+            "supplierRating": "Рейтинг",
+            "sendSupplierMessage": "Связаться с магазином",
+            "collecting": "Коллекция",
+            "material": "Материал",
+            "cotton": "100% хлопок",
+            "photosFromCustomers": "Фотографии покупателей",
+            "sendReview": "Отправить отзыв",
+            "onlyWithPhoto": "Только с фото",
+            "byRatingDesc": "Сначала с низкой оценкой",
+            "byRatingAsc": "Сначала с высокой оценкой",
+            "basedOn": "На основании",
+            "deliverySpeed": "Скорость доставки",
+            "feedback": "Консультация",
+            "productQuality": "Качество товара",
+            "star": "звезда",
+            "stars": "звезды",
+            "sendRequest": "Ответить",
+            "yourText": "Ваш текст",
+            "yourReview": "Ваш отзыв",
+            "yourName": "Ваше имя",
+            "enterName": "Введите имя",
+            "yourEmail": "Ваш Email",
+            "enterEmail": "Введите Email",
+            "reviewShopWork": "Оцените работу магазина",
+            "addPhotos": "Добавьте фото"
         }
     }
 };

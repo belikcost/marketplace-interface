@@ -3,12 +3,20 @@ import { GET_ICON } from "../../constants";
 import { setIcon } from "../../redux/actions";
 
 const importImage = async (name) => {
-    return await import(`../../img/${name.toLowerCase()}.svg`);
+    let result;
+    try {
+        result = await import(`../../img/${name.toLowerCase()}.svg`);
+    } catch {
+        result = Promise.resolve(null);
+    }
+    return result;
 }
 
 function* getIcon(action) {
     const result = yield call(importImage, action.payload);
-    yield put(setIcon({[action.payload]: result.default}));
+    if (result) {
+        yield put(setIcon({[action.payload]: result.default}));
+    }
 }
 
 export function* getIconWatcher() {

@@ -19,7 +19,6 @@ const Header = () => {
         setIsShowMenu(!isShowMenu);
     }
 
-    console.log(shop);
     return (
         <>
             <div className="container">
@@ -59,7 +58,7 @@ const Header = () => {
                 </header>
             </div>
             {isShowMenu && (
-                <Menu shop={shop}/>
+                <Menu shop={shop} handleShowMenu={handleShowMenu}/>
             )}
         </>
     );

@@ -1,3 +1,3 @@
 export const getShopFetch = async () => {
-    return await fetch(`https://5e4a4fc6-529f-44b1-bdea-f9aba3273253.mock.pstmn.io/shop`).then(r => r.json());
+    return await fetch(`https://2ef1a3bd-dbc4-4c92-9e3a-3a906edf8481.mock.pstmn.io/shop`).then(r => r.json());
 }

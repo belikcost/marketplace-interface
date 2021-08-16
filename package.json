@@ -5,10 +5,12 @@
   "private": true,
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "date-fns": "^2.23.0",
     "i18next": "^20.3.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-i18next": "^11.11.4",
+    "react-range": "^1.8.9",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "swiper": "^6.8.0",

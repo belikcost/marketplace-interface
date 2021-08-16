@@ -11,11 +11,13 @@
   height: min-content;
   transition: transform .3s, box-shadow .3s;
   margin: 0 auto;
+  color: #000;
   &__thumbnail {
     display: flex;
     justify-content: flex-end;
     img {
       margin-bottom: 5px;
+      width: 100%;
     }
   }
   &_sale {

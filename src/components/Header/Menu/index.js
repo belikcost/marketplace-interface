@@ -3,11 +3,11 @@ import { ShopArea } from "./ShopArea";
 import { useTranslation } from "react-i18next";
 import './index.scss';
 
-const Menu = ({shop}) => {
+const Menu = ({shop, handleShowMenu}) => {
     const isNotSmall = document.documentElement.scrollWidth > 580;
     const shopKeys = Object.keys(shop);
     const [currentList, setCurrentList] = useState(isNotSmall && shop[shopKeys[0]]);
-    const [currentCategory, setCurrentCategory] = useState();
+    const [currentCategory, setCurrentCategory] = useState(shopKeys[0]);
     const [rollbacks, setRollbacks] = useState([]);
     const [isMobileList, setIsMobileList] = useState(false);
     const { t } = useTranslation();
@@ -72,7 +72,14 @@ const Menu = ({shop}) => {
                 })}
             </div>
             {currentList && (
-                <ShopArea isNotSmall={isNotSmall} isMobileList={isMobileList} handleCurrentCategory={handleCurrentCategory} categories={currentList}/>
+                <ShopArea
+                    isNotSmall={isNotSmall}
+                    isMobileList={isMobileList}
+                    currentCategory={currentCategory}
+                    handleCurrentCategory={handleCurrentCategory}
+                    categories={currentList}
+                    handleShowMenu={handleShowMenu}
+                />
             )}
         </div>
     );

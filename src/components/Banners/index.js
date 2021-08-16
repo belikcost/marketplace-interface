@@ -27,10 +27,12 @@ const Banners = () => {
                     </div>
                     <div className="small-menu__body">
                         {Object.keys(selector.shop).map((category, i) => (
-                            <p key={i}>
-                                <img src={selector.icons[category]} alt={t(category)}/>
+                            <Link to={`/catalog/${category}`} key={i}>
+                                {selector.icons[category] && (
+                                    <img src={selector.icons[category]} alt={t(category)}/>
+                                )}
                                 {t(category)}
-                            </p>
+                            </Link>
                         ))}
                     </div>
                     <div className="small-menu__footer">

@@ -1,11 +1,19 @@
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ad1 from "../../../img/ad1.jpg";
 import "swiper/swiper.min.css";
 import SwiperCore, { Navigation } from "swiper";
 
-export const ShopArea = ({categories, isNotSmall, isMobileList, handleCurrentCategory}) => {
-    const { t } = useTranslation();
+export const ShopArea = ({
+                             categories,
+                             isNotSmall,
+                             isMobileList,
+                             currentCategory,
+                             handleCurrentCategory,
+                             handleShowMenu
+                         }) => {
+    const {t} = useTranslation();
     const iterableCategories = Array.isArray(categories) ? categories : Object.keys(categories);
 
     SwiperCore.use([Navigation]);
@@ -25,9 +33,17 @@ export const ShopArea = ({categories, isNotSmall, isMobileList, handleCurrentCat
                         className={'site-menu_col' + (isMobileList ? ' site-menu_last-item' : '')}
                         key={i}
                     >
-                        <span>{t(category)}</span>
+                        <Link onClick={handleShowMenu} to={`/catalog/${currentCategory}/${category}`}>
+                            <span>{t(category)}</span>
+                        </Link>
                         {isNotSmall && categories[category].map((subCategory, i) => (
-                            <p key={i}>{t(subCategory)}</p>
+                            <Link
+                                key={i}
+                                onClick={handleShowMenu}
+                                to={`/catalog/${currentCategory}/${category}/${subCategory}`}
+                            >
+                                <p>{t(subCategory)}</p>
+                            </Link>
                         ))}
                     </div>
                 ))}

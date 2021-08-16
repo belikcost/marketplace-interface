@@ -1,22 +1,29 @@
+import { Link } from "react-router-dom";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination } from 'swiper/core';
+
 import './Item.scss';
 import star from '../../img/star.svg';
 import img from '../../img/t-shirt.jpg';
 
-export const Item = ({title, price, sale, brand, images, review_rating, review_count}) => {
+
+export const Item = ({id, title, category, price, sale, brand, images, review_rating, review_count}) => {
     SwiperCore.use([Pagination]);
+
     return (
-        <div className="item">
+        <Link
+            to={`/catalog/${category.join('/')}/${id}`}
+            className="item"
+        >
             <div className="item__thumbnail">
                 <span className="item_sale">-25%</span>
                 <Swiper slidesPerView={1} pagination={true} nested={true}>
-                    <SwiperSlide>
-                        <img src={img} alt={title}/>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src={img} alt={title}/>
-                    </SwiperSlide>
+                    {images.map((image, i) => (
+                        <SwiperSlide key={i}>
+                            <img src={image} alt={title}/>
+                        </SwiperSlide>
+                    ))}
                 </Swiper>
             </div>
             <div className="item__price">
@@ -37,6 +44,6 @@ export const Item = ({title, price, sale, brand, images, review_rating, review_c
             <button className="item__add-cart">
                 В корзину
             </button>
-        </div>
+        </Link>
     );
 }

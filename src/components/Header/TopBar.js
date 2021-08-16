@@ -40,7 +40,7 @@ export const TopBar = () => {
 
                 <select value={iso} onChange={changeLang}>
                     <option value="ru">{t('russian')}</option>
-                    <option value="en">{t('english')}</option>
+                    <option value="en-US">{t('english')}</option>
                     <option value="ko">{t('korean')}</option>
                 </select>
 

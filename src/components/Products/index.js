@@ -1,14 +1,14 @@
-import { useTranslation } from "react-i18next";
 import { Item } from "./Item";
-import { products } from "../../../mocks";
 import './index.scss';
 
 
-const Products = () => {
-    const { t } = useTranslation();
+const Products = ({products, title}) => {
+
     return (
-        <div className="container products-container">
-            <h1>{t('hurryUp')}</h1>
+        <div className="products-container">
+            {title && (
+                <h1>{title}</h1>
+            )}
             <div className="products">
                 {products.map(p => (
                     <Item key={p.id} {...p}/>
