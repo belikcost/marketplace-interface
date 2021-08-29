@@ -1,0 +1,97 @@
+%row {
+  display: flex;
+}
+
+%col {
+  @extend %row;
+  flex-direction: column;
+}
+
+%bold {
+  font-weight: 500;
+}
+
+.dispute {
+  font-size: 14px;
+  @extend %row;
+  justify-content: space-between;
+  margin: 2rem 0;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .08);
+  border-radius: 4px;
+
+  &__info {
+    @extend %col;
+    justify-content: center;
+    padding: 1rem 2rem;
+    background: rgba(246, 77, 77, .1);
+    h4 {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__type {
+    color: #F64D4D;
+    margin: .5rem 0;
+    @extend %bold;
+  }
+
+  &__body {
+    @extend %col;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  h4, h6, p {
+    &:not(.dispute_bold-text) {
+      font-weight: 300;
+    }
+  }
+
+  h4, h6 {
+    font-size: 14px;
+  }
+
+  &_bold-text {
+    @extend %bold;
+  }
+
+  &__button-group {
+    @extend %col;
+    padding: 1rem;
+    img {
+      cursor: pointer;
+    }
+  }
+
+  &__total-price {
+    @extend %row;
+    align-self: flex-end;
+    h4:first-child {
+      margin-right: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .dispute {
+    flex-direction: column;
+    &__button-group {
+      flex-direction: row;
+      align-self: flex-end;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .dispute {
+    font-size: 12px;
+
+    &__body {
+      padding: .5rem .25rem;
+    }
+
+    h4, h6, p {
+      font-size: 14px;
+    }
+  }
+}

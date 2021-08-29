@@ -1,4 +1,5 @@
-@import '/src/gradientBorder.scss';
+@import '/src/styles/gradientBorder';
+@import '/src/styles/modal';
 
 %arrow {
   display: flex;
@@ -16,18 +17,6 @@
   display: flex;
   flex-direction: column;
   align-items: baseline;
-}
-
-%modal-row {
-  font-size: 16px;
-  color: rgba(0,0,0,.6);
-  border-bottom: 1px solid rgba(0, 0, 0, .1);
-  padding: .25rem;
-  cursor: pointer;
-  font-weight: normal;
-  &.active {
-    color: #000;
-  }
 }
 
 .category {
@@ -104,21 +93,10 @@
     }
   }
   &_modal-container {
-    display: flex;
-    justify-content: flex-end;
-    img {
-      cursor: pointer;
-    }
+    @extend %modal-container;
   }
   &_modal {
-    position: absolute;
-    background: #fff;
-    width: 86vw;
-    z-index: 999999;
-    margin-top: 20px;
-    box-shadow: -3px 2px 6px 4px rgba(0, 0, 0, 0.37);
-    border-radius: 4px;
-    padding: 0 .25rem;
+    @extend %modal;
     h5 {
       @extend %modal-row
     }
@@ -275,7 +253,7 @@
     &__box {
       display: block;
       font-size: 14px;
-      padding: .5rem;
+      padding: .25rem 0.5rem;
       margin-left: .5rem;
       border-width: .5px;
       span {

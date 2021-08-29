@@ -1,0 +1,91 @@
+%row {
+  display: flex;
+}
+
+%col {
+  @extend %row;
+  flex-direction: column;
+  align-items: center;
+}
+
+.supplier-reviews {
+  &__modal {
+    form {
+      @extend %col;
+    }
+    label {
+      @extend %row;
+      align-items: center;
+      margin: 1rem 0;
+      p {
+        margin-right: 1rem;
+      }
+    }
+  }
+}
+
+.supplier-review {
+  @extend %row;
+  justify-content: space-between;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  padding: .5rem 1rem;
+  margin: 2rem 0;
+  h4 {
+    font-weight: 300;
+  }
+
+  h4, &__user-area p {
+    margin-bottom: .5rem;
+  }
+
+  h4, span, p, a {
+    font-size: 12px;
+    color: #000;
+  }
+
+  &_col {
+    @extend %col;
+    margin: 0 .5rem;
+    span, a {
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &_col, &__user-area {
+    max-width: 16%;
+  }
+
+  &__user-area {
+    @extend %row;
+    img {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+    }
+    div {
+      @extend %col;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .supplier-reviews__modal {
+    width: 92vw;
+  }
+  .supplier-review {
+    flex-direction: column;
+    &_col, &__user-area {
+      max-width: none;
+      margin: .25rem 0;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    h4, &__user-area p {
+      margin-right: 1rem;
+    }
+  }
+}

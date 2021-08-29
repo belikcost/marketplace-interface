@@ -1,5 +1,6 @@
-@import '/src/gradientSwiperNav.scss';
-@import '/src/gradientBorder.scss';
+@import '/src/styles/gradientSwiperNav';
+@import '/src/styles/gradientBorder';
+@import '/src/styles/flag';
 
 %row {
   display: flex;
@@ -96,6 +97,7 @@
   &_text-right {
     text-align: right;
   }
+
   &__price {
     display: flex;
     color: #FF4343;
@@ -116,6 +118,7 @@
     display: flex;
     align-items: center;
   }
+
   &__attributes {
     margin-bottom: 1rem;
   }
@@ -251,16 +254,7 @@
     }
   }
   &_flag {
-    width: 0;
-    height: 0;
-    border-width: 80px 15px 20px;
-    border-style: solid;
-    border-color: #AEC1E4 #AEC1E4 transparent;
-    @extend %flex-center;
-    p {
-      writing-mode: vertical-rl;
-      margin-top: -70px;
-    }
+    @extend %flag;
   }
   &__features {
     display: flex;
@@ -489,25 +483,6 @@
 }
 
 .product-review-modal {
-  position: absolute;
-  background: #FFFFFF;
-  padding: 1.5rem;
-  border-radius: 4px;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.12);
-  width: 65%;
-  h4 {
-    margin: 1rem 0;
-  }
-  p {
-    font-size: 14px;
-    font-weight: 300;
-  }
-  input:not([type="file"]), textarea {
-    border: 0.5px solid rgba(70, 70, 70, 0.55);
-    box-sizing: border-box;
-    border-radius: 4px;
-    padding: .25rem .5rem;
-  }
   textarea {
     width: 100%;
     padding: .5rem;
@@ -522,25 +497,6 @@
       font-size: 24px;
     }
   }
-  &__title {
-    @extend %row;
-    h1 {
-      margin: 0;
-    }
-    img {
-      cursor: pointer;
-    }
-  }
-  &__container {
-    position: fixed;
-    @extend %flex-center;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,.6);
-    z-index: 9999;
-  }
   &_w-50 {
     width: 50%;
   }
@@ -550,14 +506,6 @@
   &__footer {
     display: flex;
     justify-content: flex-end;
-    span {
-      background: linear-gradient(96.78deg, #F64D4D -57.09%, #4D5EF6 101.17%);
-      padding: .5rem 2rem;
-      text-align: center;
-      box-shadow: 0 0 40px rgba(0, 0, 0, 0.12);
-      color: #fff;
-      cursor: pointer;
-    }
   }
 }
 

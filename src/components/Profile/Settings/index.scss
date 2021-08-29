@@ -1,0 +1,117 @@
+@import "/src/styles/fields";
+@import "/src/styles/checkbox";
+@import "/src/styles/button";
+
+%row {
+  display: flex;
+}
+
+.profile-settings {
+  &__avatar {
+    img {
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    input {
+      display: none;
+    }
+  }
+  article {
+    margin: 1rem 0;
+  }
+  h4, h5 {
+    font-weight: 400;
+  }
+  h4 {
+    font-size: 22px;
+  }
+  h5 {
+    font-size: 16px;
+  }
+  &_checkbox {
+    @extend %checkbox;
+  }
+  &_info-text {
+    margin: 1rem 0;
+  }
+  &_bank-card {
+    border: 0.5px solid #000000;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding: .5rem;
+    @extend %row;
+    justify-content: space-between;
+    margin: 1rem 0;
+    width: 70%;
+    &, h6 {
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+    &, div {
+      @extend %row;
+    }
+
+    h6, img {
+      cursor: pointer;
+    }
+
+    img {
+      margin-left: .5rem;
+    }
+  }
+  &__card-modal {
+    form {
+      box-shadow: 0 4px 40px rgba(0, 0, 0, 0.12);
+      border-radius: 4px;
+      width: 60%;
+      margin: 1rem auto;
+      padding: 1rem 1.5rem;
+      flex-direction: column;
+      &, div, label, footer {
+        @extend %row;
+      }
+      label {
+        flex-direction: column;
+      }
+    }
+    input {
+      margin: 0.5rem 1rem 0.5rem 0;
+      width: 100%;
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+    button {
+      align-self: flex-end;
+    }
+    footer {
+      justify-content: space-between;
+    }
+  }
+  section {
+    @extend %field-container;
+    margin: 2rem 0;
+    label {
+      width: 70%;
+    }
+  }
+  &_button {
+    @extend %button;
+    background: linear-gradient(96.78deg, #F64D4D -57.09%, #4D5EF6 101.17%);
+    padding: .5rem 2rem;
+    color: #fff;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .profile-settings {
+    section label, &_bank-card {
+      width: 100%;
+    }
+  }
+}

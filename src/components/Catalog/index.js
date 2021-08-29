@@ -2,7 +2,6 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import CatalogWrapper from "../../containers/CatalogWrapper";
 import './index.scss';
 
 
@@ -11,7 +10,7 @@ const Catalog = () => {
     const {t} = useTranslation();
 
     return (
-        <CatalogWrapper>
+        <div className="container catalog-wrapper">
             <div className="catalog">
                 <div className="catalog_column">
                     {Object.keys(selector.shop).map((category, i) => (
@@ -22,7 +21,7 @@ const Catalog = () => {
                     ))}
                 </div>
             </div>
-        </CatalogWrapper>
+        </div>
     );
 }
 

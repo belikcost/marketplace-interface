@@ -1,0 +1,39 @@
+@import '/src/styles/gradientBorder';
+
+.search-field {
+  width: 50%;
+  &, label {
+    display: flex;
+  }
+  label {
+    position: relative;
+    justify-content: flex-end;
+    align-items: center;
+    width: 70%;
+  }
+  input {
+    padding: .25rem .5rem;
+    height: 100%;
+    &[type="date"] {
+      background: linear-gradient(96.78deg, rgba(246, 77, 77, 0.2) -57.09%, rgba(77, 94, 246, 0.2) 101.17%);
+      border: none;
+      margin-right: 1rem;
+    }
+    &[type="text"] {
+      @extend %gradient-border;
+      width: 100%;
+    }
+  }
+  img {
+    position: absolute;
+    margin-right: .5rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .search-field {
+    &, label {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+%flag {
+  width: 0;
+  height: 0;
+  border-width: 80px 15px 20px;
+  border-style: solid;
+  border-color: #AEC1E4 #AEC1E4 transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    writing-mode: vertical-rl;
+    margin-top: -70px;
+  }
+}

@@ -1,0 +1,133 @@
+@import "/src/styles/checkbox";
+@import "/src/styles/gradientBorder";
+@import "/src/styles/salePrice";
+
+%row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.product-list {
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__add-product {
+    @extend %gradient-border;
+    padding: .5rem 2rem;
+    cursor: pointer;
+    color: #000;
+  }
+}
+
+.supplier-product {
+  @extend %row;
+  padding: .5rem 1.5rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  margin: 2rem 0;
+
+  &_checkbox {
+    @extend %checkbox;
+    min-width: 20px;
+  }
+  h5, span {
+    font-weight: 300;
+  }
+  h5 {
+    margin-bottom: 1rem;
+  }
+  &, h5, p {
+    font-size: 12px;
+  }
+  &_price {
+    white-space: nowrap;
+  }
+  &__body {
+    @extend %row;
+    img {
+      width: 50px;
+      height: fit-content;
+    }
+  }
+  &__categories {
+    display: flex;
+    flex-wrap: wrap;
+    white-space: nowrap;
+    span {
+      margin-right: .25rem;
+    }
+  }
+  &_col {
+    margin: 0 1rem;
+  }
+  &__button-group {
+    display: flex;
+    flex-direction: column;
+    img {
+      cursor: pointer;
+    }
+  }
+
+  &__price {
+    display: flex;
+  }
+  &_line {
+    @extend %sale-price_line;
+  }
+
+  &_old-price {
+    @extend %sale-price_old-price;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .supplier-product_col {
+    margin: 0 .5rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .supplier-product {
+    &__body {
+      flex-direction: column;
+      align-items: baseline;
+      width: 70%;
+      img {
+        margin: 0 auto 1rem;
+      }
+    }
+    h5 {
+      margin-right: 1rem;
+    }
+    &_col {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .supplier-product {
+    &__body {
+      width: 100%;
+      margin-right: 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .supplier-product {
+    h5 {
+      margin: 0;
+    }
+    &_col {
+      flex-direction: column;
+      margin-bottom: 1rem;
+      width: auto;
+    }
+  }
+}

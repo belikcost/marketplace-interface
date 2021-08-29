@@ -2,15 +2,20 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
+import { createHandle } from "../../../utils";
+
 import Filter from "../Filter";
 import Products from "../../Products";
-import { Toggler } from "../Filter/Items/Toggler";
-import { SelectBar } from "../Filter/Items/SelectBar";
-import './index.scss';
+
+import { Toggler } from "../../../base/FilterItems/Toggler";
+import { SelectBar } from "../../../base/FilterItems/SelectBar";
+
 import starFill from '/src/img/star_fill.svg';
 import starNotFill from '/src/img/star_not_fill.svg';
 import sortIcon from '/src/img/sort.svg';
 import filtersIcon from '/src/img/filters.svg';
+
+import './index.scss';
 
 
 const Category = ({shop, currentCategory, icons, filters, handleFilters, products}) => {
@@ -48,7 +53,7 @@ const Category = ({shop, currentCategory, icons, filters, handleFilters, product
         );
     }
 
-    const createHandle = (value, setter) => setter(!value);
+
 
     const Rating = () => (
         <div className="category__row category_rating">

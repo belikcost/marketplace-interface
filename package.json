@@ -17,12 +17,11 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "webpack serve --mode development",
-    "build": "rm -r build && webpack --mode production",
-    "test": "react-scripts test",
+    "start": "env-cmd -f .env.dev webpack serve --mode development",
+    "build": "env-cmd -f .env.dev rm -r build && webpack --mode production",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "env-cmd -f .env.dev gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -66,3 +65,4 @@
     "webpack-dev-server": "^3.11.2"
   }
 }
+

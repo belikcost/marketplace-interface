@@ -1,9 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
-import i18next from "i18next";
 import { connect } from "react-redux";
 
 import {
-    getLocale,
     getProductAttributesRequest,
     getProductRequest,
     getProductReviewsRequest,
@@ -12,16 +10,10 @@ import {
 
 import Product from "../components/Catalog/Product";
 
-const ProductContainer = ({match: {params: {id}}, onGetLocale, product, onGetProductRequest, onGetProductAttributesRequest, onGetProductReviewsRequest, onGetSupplierRequest}) => {
+
+const ProductContainer = ({match: {params: {id}}, locale, supplier, product, onGetProductRequest, onGetProductAttributesRequest, onGetProductReviewsRequest, onGetSupplierRequest}) => {
     const [variableAttributes, setVariableAttributes] = useState([]);
     const [count, setCount] = useState(1);
-    const [reviews, setReviews] = useState([]);
-
-    const iso = i18next.language;
-
-    useEffect(() => {
-        onGetLocale(iso);
-    }, [onGetLocale, iso])
 
     useEffect(() => {
         onGetProductRequest(id);
@@ -47,11 +39,6 @@ const ProductContainer = ({match: {params: {id}}, onGetLocale, product, onGetPro
         }
     }, [product.variableAttributes]);
 
-    useEffect(() => {
-        if (product.reviewRating.reviews) {
-            setReviews(product.reviewRating.reviews);
-        }
-    }, [product.reviewRating.reviews])
 
     const handleSetAttributeValue = useCallback((id, value) => {
         setVariableAttributes(variableAttributes.map(attribute => attribute.id === id ? {
@@ -65,29 +52,31 @@ const ProductContainer = ({match: {params: {id}}, onGetLocale, product, onGetPro
         }
     },[]);
 
-    const handleSetReviews = useCallback((value) => {
-        setReviews(value);
-    },[]);
 
-    return (
-        <Product
-            product={product}
-            variableAttributes={variableAttributes}
-            handleSetAttributeValue={handleSetAttributeValue}
-            count={count}
-            handleSetCount={handleSetCount}
-            reviews={reviews}
-            handleSetReviews={handleSetReviews}
-        />
-    );
+    if (Object.keys(product).length > 5 && product.reviewRating) {
+        return (
+            <Product
+                locale={locale}
+                product={product}
+                variableAttributes={variableAttributes}
+                handleSetAttributeValue={handleSetAttributeValue}
+                count={count}
+                handleSetCount={handleSetCount}
+                supplier={supplier}
+            />
+        );
+    } else {
+        return null;
+    }
 };
 
 const mapStateToProps = (state) => ({
-    product: state.currentProduct
+    locale: state.locale,
+    product: state.currentProduct,
+    supplier: state.supplier
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    onGetLocale: (iso) => dispatch(getLocale(iso)),
     onGetProductRequest: (id) => dispatch(getProductRequest(id)),
     onGetProductAttributesRequest: (id) => dispatch(getProductAttributesRequest(id)),
     onGetProductReviewsRequest: (id) => dispatch(getProductReviewsRequest(id)),

@@ -1,4 +1,4 @@
-@import '/src/gradientSwiperNav.scss';
+@import '/src/styles/gradientSwiperNav';
 
 .banners {
     display: flex;
@@ -96,6 +96,14 @@
             img:last-child {
                 margin-top: 1.5rem;
             }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .banners {
+        .swiper-container {
+            max-width: 100%;
         }
     }
 }

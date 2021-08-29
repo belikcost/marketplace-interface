@@ -1,0 +1,77 @@
+@import '/src/styles/gradientBorder';
+
+%row {
+  display: flex;
+}
+
+.supplier-details {
+  &_link {
+    @extend %gradient-border;
+    padding: .5rem 2rem;
+    cursor: pointer;
+    color: #000;
+  }
+}
+
+.product-detail {
+  @extend %row;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  margin: 2rem 0;
+  padding: .5rem 1rem .5rem 2rem;
+  h4 {
+    font-size: 22px;
+  }
+  h4, p {
+    font-weight: 400;
+  }
+  &__body {
+    width: 100%;
+    margin-right: 1rem;
+  }
+  &_label {
+    @extend %row;
+    justify-content: space-between;
+    width: 100%;
+    margin: 1rem 0;
+    span {
+      font-weight: 300;
+      margin-right: .25rem;
+    }
+  }
+  &__values {
+    @extend %row;
+    flex-wrap: wrap;
+    span {
+      font-size: 14px;
+      font-weight: 300;
+      padding: .25rem .75rem;
+      margin-right: .5rem;
+      border: 0.5px solid #000000;
+      box-sizing: border-box;
+      border-radius: 4px;
+    }
+  }
+  &__categories {
+    @extend %row;
+  }
+  &__button-group {
+    @extend %row;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .product-detail {
+    &_label {
+      flex-direction: column;
+      p {
+        margin-bottom: .5rem;
+      }
+    }
+    &__values span {
+      margin-bottom: .5rem;
+      font-size: 12px;
+    }
+  }
+}

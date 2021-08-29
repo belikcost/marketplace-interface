@@ -1,0 +1,39 @@
+%row {
+  display: flex;
+  align-items: center;
+}
+
+.suppliers {
+  margin: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.supplier {
+  @extend %row;
+  align-items: baseline;
+  flex-direction: column;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.12);
+  background: #fff;
+  margin: 0 1.5rem 1.5rem 0;
+  padding: .5rem 1rem;
+  &__header {
+    @extend %row;
+    img {
+      width: fit-content;
+      height: 40px;
+    }
+  }
+  h4 {
+    text-transform: uppercase;
+    color: #000;
+    font-weight: normal;
+  }
+  &__body {
+    @extend %row;
+    img {
+      width: 50px;
+      margin: .25rem;
+    }
+  }
+}

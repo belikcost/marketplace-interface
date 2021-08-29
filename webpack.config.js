@@ -53,7 +53,11 @@ module.exports = {
         }),
         new webpack.ProvidePlugin({
             "React": "react",
+            process: 'process/browser',
         }),
+        new webpack.DefinePlugin({
+            'process.env': JSON.stringify(process.env)
+        })
     ],
     devServer: {
         historyApiFallback: true,

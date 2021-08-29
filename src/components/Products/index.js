@@ -2,18 +2,13 @@ import { Item } from "./Item";
 import './index.scss';
 
 
-const Products = ({products, title}) => {
+const Products = ({products}) => {
 
     return (
-        <div className="products-container">
-            {title && (
-                <h1>{title}</h1>
-            )}
-            <div className="products">
-                {products.map(p => (
-                    <Item key={p.id} {...p}/>
-                ))}
-            </div>
+        <div className="products">
+            {products.map(p => (
+                <Item key={p.id} {...p}/>
+            ))}
         </div>
     )
 

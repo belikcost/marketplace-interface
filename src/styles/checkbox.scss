@@ -1,0 +1,22 @@
+%checkbox {
+  width: 20px;
+  height: 20px;
+  border: 0.5px solid rgba(0, 0, 0, .6);
+  border-radius: 4px;
+  margin-right: .5rem;
+  cursor: pointer;
+
+  &.active {
+    display: flex;
+    align-items: center;
+    &::after {
+      content: "";
+      border: solid #000;
+      border-width: 0 2px 2px 0;
+      border-radius: 1px;
+      padding: 7px;
+      display: block;
+      transform: rotate(45deg) translate(0, -5px);
+    }
+  }
+}

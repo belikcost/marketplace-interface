@@ -1,0 +1,22 @@
+@import "/src/styles/button";
+@import "/src/styles/createEditHeader";
+@import "/src/styles/fields";
+
+%row {
+  display: flex;
+}
+
+.add-sale {
+  header {
+    @extend %createEditHeader;
+  }
+  &__body {
+    @extend %field-container;
+    margin: 2rem 0;
+  }
+  &_button {
+    @extend %button;
+    background: linear-gradient(96.78deg, #F64D4D -57.09%, #4D5EF6 101.17%);
+    color: #fff;
+  }
+}

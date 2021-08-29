@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { Range } from "./Items/Range";
-import { Checkboxes } from "./Items/Checkboxes";
+import { Range } from "../../../base/FilterItems/Range";
+import { Checkboxes } from "../../../base/FilterItems/Checkboxes";
 
 
 const Filter = ({filter, handleFilters, icons}) => {

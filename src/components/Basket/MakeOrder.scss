@@ -1,0 +1,43 @@
+@import "/src/styles/fields";
+
+%col {
+  display: flex;
+  flex-direction: column;
+}
+
+.make-order {
+  margin: 2rem 0;
+  form {
+    @extend %col;
+    @extend %field-container;
+    width: 50%;
+    label {
+      width: 100%;
+    }
+    button {
+      @extend %button;
+      align-self: flex-end;
+      background: linear-gradient(96.78deg, rgba(246, 77, 77, 0.2) -57.09%, rgba(77, 94, 246, 0.2) 101.17%);
+    }
+  }
+  &_modal {
+    @extend %col;
+    p {
+      text-align: center;
+      margin: 1rem 0;
+    }
+    a {
+      @extend %button;
+      align-self: center;
+      background: linear-gradient(96.78deg, rgba(246, 77, 77, 0.2) -57.09%, rgba(77, 94, 246, 0.2) 101.17%);
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .make-order {
+    form {
+      width: 100%;
+    }
+  }
+}

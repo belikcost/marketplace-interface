@@ -1,0 +1,15 @@
+%sale-price {
+  &_line {
+    position: absolute;
+    width: 60%;
+    height: 1px;
+    background: #FF4343;
+    transform: matrix(0.99, -0.09, 0.13, 1, 0, 0);
+  }
+  &_old-price {
+    color: rgba(70, 70, 70, 0.55);
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+}
