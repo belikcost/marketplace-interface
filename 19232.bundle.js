@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkplacemik_beta=self.webpackChunkplacemik_beta||[]).push([[19232],{19232:function(e,t){Object.defineProperty(t,"__esModule",{value:!0}),t.default=function(e,t,n,r){return a[e]};var a={lastWeek:"'të' eeee 'e shkuar në' p",yesterday:"'dje në' p",today:"'sot në' p",tomorrow:"'nesër në' p",nextWeek:"eeee 'at' p",other:"P"};e.exports=t.default}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkplacemik_beta=self.webpackChunkplacemik_beta||[]).push([[46840],{46840:function(e,t){Object.defineProperty(t,"__esModule",{value:!0}),t.default=function(e,t,p,r){return a[e]};var a={lastWeek:"'પાછલા' eeee p",yesterday:"'ગઈકાલે' p",today:"'આજે' p",tomorrow:"'આવતીકાલે' p",nextWeek:"eeee p",other:"P"};e.exports=t.default}}]);

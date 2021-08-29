@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkplacemik_beta=self.webpackChunkplacemik_beta||[]).push([[51573],{51573:function(e,t){Object.defineProperty(t,"__esModule",{value:!0}),t.default=function(e,t,a,r){return o[e]};var o={lastWeek:"'vorige' eeee 'om' p",yesterday:"'gisteren om' p",today:"'vandaag om' p",tomorrow:"'morgen om' p",nextWeek:"eeee 'om' p",other:"P"};e.exports=t.default}}]);
