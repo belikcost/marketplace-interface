@@ -20,7 +20,7 @@
   &__header {
     @extend %row;
     img {
-      width: fit-content;
+      width: auto;
       height: 40px;
     }
   }
