@@ -3,11 +3,23 @@
 .homepage {
   section {
     margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    p {
+      font-weight: 300;
+    }
+    b {
+      margin: 1rem 0;
+      cursor: pointer;
+      background: linear-gradient(96.78deg, #F64D4D -57.09%, #4D5EF6 101.17%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      align-self: baseline;
+    }
   }
   &_link {
-    @extend %button;
-    padding: .5rem 2rem;
-    background: linear-gradient(96.78deg, #F64D4D -57.09%, #4D5EF6 101.17%);
-    color: #fff;
+    align-self: flex-end;
+    @extend %gradient-border-button;
   }
 }

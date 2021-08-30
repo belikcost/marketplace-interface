@@ -1,3 +1,5 @@
+@import "./gradientBorder";
+
 %button {
   border-radius: 4px;
   padding: .25rem .75rem;
@@ -5,4 +7,21 @@
   color: #000;
   font-size: 14px;
   cursor: pointer;
+}
+
+%gradient-border-button, %gradient-button {
+  border-width: 2px;
+  padding: .5rem 3rem;
+}
+
+%gradient-border-button {
+  color: #000;
+  background: none;
+  @extend %gradient-border;
+}
+
+%gradient-button {
+  border: rgba(0, 0, 0, 0);
+  background: linear-gradient(96.78deg, #F64D4D -57.09%, #4D5EF6 101.17%);
+  color: #fff;
 }

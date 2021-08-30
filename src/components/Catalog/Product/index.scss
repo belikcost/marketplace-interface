@@ -1,6 +1,7 @@
 @import '/src/styles/gradientSwiperNav';
 @import '/src/styles/gradientBorder';
 @import '/src/styles/flag';
+@import '/src/styles/button';
 
 %row {
   display: flex;
@@ -174,15 +175,10 @@
       @extend %flex-center;
       cursor: pointer;
       &:hover, &:first-child {
-        border: rgba(0, 0, 0, 0);
-        background: linear-gradient(96.78deg, #F64D4D -57.09%, #4D5EF6 101.17%);
-        color: #fff;
+        @extend %gradient-button;
       }
       &, &:first-child:hover {
-        color: #000;
-        background: none;
-        border-width: 2px;
-        @extend %gradient-border;
+        @extend %gradient-border-button;
       }
     }
   }

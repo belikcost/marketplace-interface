@@ -86,6 +86,7 @@ a {
 .container {
   margin: 0 auto;
   padding: 0 44px;
+  max-width: 1280px;
 }
 
 .nav{
@@ -198,7 +199,7 @@ a {
 
 .section {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .section li{
@@ -1042,6 +1043,10 @@ a {
     order: 1;
     margin: 1rem 0;
   }
+
+  .header_dropdown span, .header_dropdown a {
+    padding: .25rem 1rem;
+  }
 }
 
 @media screen and (max-width: 580px) {
@@ -1053,11 +1058,19 @@ a {
   }
   .section {
     width: 35%;
+    justify-content: flex-end;
   }
   .header {
     flex-direction: column-reverse;
   }
   .section a p, .nav .menu {
     display: none;
+  }
+  .main__column li {
+    justify-content: flex-end;
+  }
+  .header_dropdown::before {
+    right: 5px;
+    left: auto;
   }
 }

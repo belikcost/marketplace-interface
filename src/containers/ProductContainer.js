@@ -53,7 +53,7 @@ const ProductContainer = ({match: {params: {id}}, locale, supplier, product, onG
     },[]);
 
 
-    if (Object.keys(product).length > 5 && product.reviewRating) {
+    if (Object.keys(product).length > 5 && product.reviewRating && product.reviewRating.reviews) {
         return (
             <Product
                 locale={locale}

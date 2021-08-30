@@ -43,7 +43,7 @@ const Product = ({locale, product, variableAttributes, handleSetAttributeValue, 
     const calcSupplierRating = (rating) => Math.floor(rating.reduce((prev, current) => +current + +prev) / rating.length);
     const calcStarsCountPercent = (starsCount, reviewsCount) => starsCount * 100 / reviewsCount;
 
-    const totalReviewRating = calculateTotalRating(product.reviewRating);
+    const totalReviewRating = calculateTotalRating([product.reviewRating.delivery, product.reviewRating.feedback, product.reviewRating.productQuality]);
     const reviewStarsCount = Math.round(totalReviewRating);
     const totalReviewStarsCount = calcTotalStarsCount(ratingStars);
     const reviewsCount = product.reviewRating.reviews.length;
