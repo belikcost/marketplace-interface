@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect } from "react";
 import { connect } from "react-redux";
 import { Switch, Route, Redirect } from 'react-router-dom';
 import i18next from "i18next";
@@ -29,7 +29,6 @@ import App from "../components/App";
 
 
 const AppContainer = ({onGetLocale, user, onLoginRequest, shop, onGetShopRequest, products, onGetProductsRequest, onGetIcon, suppliers, onGetSuppliersRequest, articles, onGetArticlesRequest}) => {
-    const [isGetLocalUser, setIsGetLocalUser] = useState(false);
 
     const iso = i18next.language;
     const languages = Object.keys(i18next.store.data);
@@ -42,13 +41,8 @@ const AppContainer = ({onGetLocale, user, onLoginRequest, shop, onGetShopRequest
 
     useEffect(() => {
         const localUserHash = getCookie('user');
-
-        if (localUserHash) {
-            if (user) {
-                setIsGetLocalUser(true);
-            } else {
-                onLoginRequest({hash: localUserHash});
-            }
+        if (localUserHash && !user) {
+            onLoginRequest({hash: localUserHash});
         }
     }, [user, onLoginRequest]);
 
@@ -70,35 +64,31 @@ const AppContainer = ({onGetLocale, user, onLoginRequest, shop, onGetShopRequest
 
     useEffect(() => onGetArticlesRequest(),[onGetArticlesRequest]);
 
-    if (isGetLocalUser) {
-        return (
-            <>
-                <Header/>
-                <Switch>
-                    <Route exact path="/">
-                        <App
-                            articles={articles}
-                            products={products}
-                            suppliers={suppliers}
-                            handleGetSuppliers={handleGetSuppliers}
-                        />
-                    </Route>
-                    <Route path="/articles" component={ArticlesContainer}/>
-                    <Route path="/supplier/:id" component={SupplierContainer}/>
-                    <Route path="/basket" component={BasketContainer}/>
-                    <Route path="/profile" render={() => user ? <Profile/> : <Redirect to="/"/>}/>
-                    <Route exact path="/catalog" component={Catalog}/>
-                    <Route exact path="/catalog/:category" component={CategoryWrapper}/>
-                    <Route exact path="/catalog/:category/:subcategory" component={CategoryWrapper}/>
-                    <Route exact path="/catalog/:category/:subcategory/:item" component={CategoryWrapper}/>
-                    <Route exact path="/catalog/:category/:subcategory/:item/:id" component={ProductContainer}/>
-                </Switch>
-                <Footer/>
-            </>
-        );
-    } else {
-        return null;
-    }
+    return (
+        <>
+            <Header/>
+            <Switch>
+                <Route exact path="/">
+                    <App
+                        articles={articles}
+                        products={products}
+                        suppliers={suppliers}
+                        handleGetSuppliers={handleGetSuppliers}
+                    />
+                </Route>
+                <Route path="/articles" component={ArticlesContainer}/>
+                <Route path="/supplier/:id" component={SupplierContainer}/>
+                <Route path="/basket" component={BasketContainer}/>
+                <Route path="/profile" render={() => user ? <Profile/> : <Redirect to="/"/>}/>
+                <Route exact path="/catalog" component={Catalog}/>
+                <Route exact path="/catalog/:category" component={CategoryWrapper}/>
+                <Route exact path="/catalog/:category/:subcategory" component={CategoryWrapper}/>
+                <Route exact path="/catalog/:category/:subcategory/:item" component={CategoryWrapper}/>
+                <Route exact path="/catalog/:category/:subcategory/:item/:id" component={ProductContainer}/>
+            </Switch>
+            <Footer/>
+        </>
+    );
 };
 
 const mapStateToProps = (state) => ({
