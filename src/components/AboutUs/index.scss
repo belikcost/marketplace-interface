@@ -1,0 +1,12 @@
+@import "/src/styles/gradientSwiperNav";
+
+.about-us {
+  margin: 2rem 0;
+  p {
+    font-size: 15px;
+  }
+  @extend %gradient-swiper-nav;
+  .articles {
+    margin: 2rem 0;
+  }
+}

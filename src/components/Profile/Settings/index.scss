@@ -101,10 +101,7 @@
     }
   }
   &_button {
-    @extend %button;
-    background: linear-gradient(96.78deg, #F64D4D -57.09%, #4D5EF6 101.17%);
-    padding: .5rem 2rem;
-    color: #fff;
+    @extend %gradient-button;
   }
 }
 

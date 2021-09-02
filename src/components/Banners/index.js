@@ -1,18 +1,16 @@
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { Link } from 'react-router-dom';
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation, Pagination } from 'swiper/core';
-import ad1 from '../../img/ad1.jpg';
+
+import { Banner } from "./Banner";
+
 import threeEllipse from '../../img/tripple_ellipse.svg';
 
-import "swiper/swiper.min.css";
 import './index.scss';
 
+
 const Banners = () => {
-    SwiperCore.use([Navigation, Pagination]);
     const { t } = useTranslation();
-    const isNotSmall = document.documentElement.scrollWidth > 580;
     const isNotMedium = document.documentElement.scrollWidth > 800;
     const selector = useSelector(selector => selector);
 
@@ -42,22 +40,7 @@ const Banners = () => {
                         </div>
                     </div>
                 )}
-                <Swiper
-                    pagination={!isNotSmall}
-                    navigation={isNotSmall}
-                    slidesPerView={1}
-                    className="banners__swiper"
-                >
-                    <SwiperSlide><img src={ad1} alt="Баннер"/></SwiperSlide>
-                    <SwiperSlide><img src={ad1} alt="Баннер"/></SwiperSlide>
-                    <SwiperSlide><img src={ad1} alt="Баннер"/></SwiperSlide>
-                    <SwiperSlide><img src={ad1} alt="Баннер"/></SwiperSlide>
-                    <SwiperSlide><img src={ad1} alt="Баннер"/></SwiperSlide>
-                    <SwiperSlide><img src={ad1} alt="Баннер"/></SwiperSlide>
-                    <SwiperSlide><img src={ad1} alt="Баннер"/></SwiperSlide>
-                    <SwiperSlide><img src={ad1} alt="Баннер"/></SwiperSlide>
-                    <SwiperSlide><img src={ad1} alt="Баннер"/></SwiperSlide>
-                </Swiper>
+                <Banner/>
             </div>
         </div>
     );

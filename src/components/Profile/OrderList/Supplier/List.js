@@ -5,7 +5,7 @@ import { Route, useRouteMatch } from "react-router-dom";
 import { TrackModal } from "./TrackModal";
 import { Order } from "../Order";
 
-import { Search } from "../../../../base/Fields/Search";
+import { Search } from "/src/base/Fields/Search";
 
 import cancelIcon from '/src/img/Mini_button_cancel.svg';
 import sendTrackIcon from '/src/img/mini_button_send.svg';
@@ -38,7 +38,7 @@ export const List = ({locale, list}) => {
     return (
         <>
             <div className="order-list">
-                <Search/>
+                <Search date={true}/>
                 {list.map(order => (
                     <Order
                         locale={locale}

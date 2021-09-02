@@ -26,6 +26,7 @@ import Catalog from "../components/Catalog";
 import Profile from "../components/Profile";
 import Footer from "../components/Footer";
 import App from "../components/App";
+import AboutUs from "../components/AboutUs";
 
 
 const AppContainer = ({onGetLocale, user, onLoginRequest, shop, onGetShopRequest, products, onGetProductsRequest, onGetIcon, suppliers, onGetSuppliersRequest, articles, onGetArticlesRequest}) => {
@@ -49,6 +50,8 @@ const AppContainer = ({onGetLocale, user, onLoginRequest, shop, onGetShopRequest
             } else {
                 onLoginRequest({hash: localUserHash});
             }
+        } else {
+            setIsGetLocalUser(true);
         }
     }, [user, onLoginRequest]);
 
@@ -77,11 +80,13 @@ const AppContainer = ({onGetLocale, user, onLoginRequest, shop, onGetShopRequest
                 <Switch>
                     <Route exact path="/">
                         <App
-                            articles={articles}
                             products={products}
                             suppliers={suppliers}
                             handleGetSuppliers={handleGetSuppliers}
                         />
+                    </Route>
+                    <Route path="/about-us">
+                        <AboutUs articles={articles}/>
                     </Route>
                     <Route path="/articles" component={ArticlesContainer}/>
                     <Route path="/supplier/:id" component={SupplierContainer}/>

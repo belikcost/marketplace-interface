@@ -17,16 +17,22 @@ const OrderList = ({locale, userRole, orderList}) => {
                 <NavLink to="/profile/order-list/sent">{t('sentOrders')}</NavLink>
                 <NavLink to="/profile/order-list/received">{t('receivedOrders')}</NavLink>
             </div>
-            {userRole === 'supplier' ? (
-                <SupplierList
-                    locale={locale}
-                    list={orderList}
-                />
+            {(orderList && orderList.length !== 0) ? (
+                <>
+                    {userRole === 'supplier' ? (
+                        <SupplierList
+                            locale={locale}
+                            list={orderList}
+                        />
+                    ) : (
+                        <CustomerList
+                            locale={locale}
+                            list={orderList}
+                        />
+                    )}
+                </>
             ) : (
-                <CustomerList
-                    locale={locale}
-                    list={orderList}
-                />
+                <h4>{t('ordersNotFound')}</h4>
             )}
         </>
     )

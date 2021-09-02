@@ -154,17 +154,17 @@
   }
   &__footer {
     @extend %row;
+    justify-content: flex-end;
     margin: 3rem 0 0;
     a, button {
       @extend %button;
+      padding: 0.75rem 4rem;
       &:first-child {
-        background: linear-gradient(96.78deg, rgba(246, 77, 77, 0.2) -57.09%, rgba(77, 94, 246, 0.2) 101.17%);
+        background: rgba(174, 193, 228, 0.3);
         margin-right: 1rem;
       }
       &:last-child {
-        background: linear-gradient(96.78deg, #F64D4D -57.09%, #4D5EF6 101.17%);
-        color: #fff;
-        padding: .25rem 2rem;
+        background: linear-gradient(96.78deg, rgba(246, 77, 77, 0.2) -57.09%, rgba(77, 94, 246, 0.2) 101.17%);
       }
     }
   }

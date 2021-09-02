@@ -1,9 +1,14 @@
 @import "/src/styles/checkbox";
 @import "/src/styles/gradientBorder";
 @import "/src/styles/salePrice";
+@import "/src/styles/button";
+
+%flex {
+  display: flex;
+}
 
 %row {
-  display: flex;
+  @extend %flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -11,8 +16,33 @@
 
 .product-list {
   header {
-    display: flex;
+    flex-direction: column;
+    @extend %flex;
+  }
+  &__search {
+    @extend %flex;
     justify-content: space-between;
+  }
+  &_select-all {
+    margin: 1rem;
+    @extend %flex;
+    select {
+      @extend %gradient-border;
+      margin-right: 1.5rem;
+    }
+    button {
+      @extend %button;
+      background: linear-gradient(96.78deg, rgba(246, 77, 77, 0.2) -57.09%, rgba(77, 94, 246, 0.2) 101.17%);
+    }
+    label {
+      @extend %flex;
+      flex-direction: row-reverse;
+      align-items: center;
+    }
+  }
+  &_checkbox {
+    @extend %checkbox;
+    margin-left: .25rem;
   }
   &__add-product {
     @extend %gradient-border;
@@ -27,7 +57,7 @@
   padding: .5rem 1.5rem;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
   border-radius: 4px;
-  margin: 2rem 0;
+  margin: 0 0 2rem;
 
   &_checkbox {
     @extend %checkbox;
@@ -71,8 +101,8 @@
     }
   }
 
-  &__price {
-    display: flex;
+  &_price p:not(&_old-price) {
+    font-size: 16px;
   }
   &_line {
     @extend %sale-price_line;

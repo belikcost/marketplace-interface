@@ -1,5 +1,6 @@
 import { getYear } from "date-fns";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 import logoImage from '/src/img/logo_white.svg';
 import vkIcon from '/src/img/vk.svg';
@@ -33,7 +34,7 @@ const Footer = () => {
                     </div>
                     <div className="main-footer_col">
                         <h4>{t('aboutCompany')}</h4>
-                        <a href="/">{t('aboutUs')}</a>
+                        <Link to="/about-us">{t('aboutUs')}</Link>
                         <a href="/">{t('news')}</a>
                         <a href="/">{t('faq')}</a>
                         <a href="/">{t('supportService')}</a>

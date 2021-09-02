@@ -45,13 +45,6 @@ const App = ({products, suppliers, handleGetSuppliers, articles}) => {
                         </Link>
                     </section>
                     <section>
-                        <h1>{t('ourArticles')}</h1>
-                        <Articles articles={articles}/>
-                        <Link to="/articles" className="homepage_link">
-                            {t('allArticles')}
-                        </Link>
-                    </section>
-                    <section>
                         <h1>{t('aboutUs')}</h1>
                         <p className="homepage_text">
                             {showAll ? aboutUsText : `${aboutUsText.substr(0, 600)}...`}
