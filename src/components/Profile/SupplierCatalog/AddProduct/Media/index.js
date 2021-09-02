@@ -27,6 +27,7 @@ const Media = ({images, handleChange}) => {
                 <p>{t('addImages')}</p>
                 <input
                     type="file"
+                    accept=".jpg, .jpeg, .png"
                     ref={fileInput}
                     onChange={(e) => handleSetImages(e.target.files)}
                 />

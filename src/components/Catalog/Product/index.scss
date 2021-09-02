@@ -479,18 +479,36 @@
 }
 
 .product-review-modal {
+  padding: 1.5rem;
   textarea {
     width: 100%;
     padding: .5rem;
   }
   img {
-    max-width: 100px;
+    max-width: 60px;
+  }
+  .modal__title {
+    justify-content: flex-start;
+    h1 {
+      margin: 0;
+    }
   }
   &__product-info {
     @extend %row;
     h1 {
-      margin-left: 1.5rem;
-      font-size: 24px;
+      margin: 0 0 0 1.5rem;
+      font-size: 20px;
+    }
+  }
+  &__load {
+    input {
+      display: none;
+    }
+    img {
+      width: 20px;
+      cursor: pointer;
+      background: linear-gradient(96.78deg, rgba(246, 77, 77, 0.2) -57.09%, rgba(77, 94, 246, 0.2) 101.17%);
+      padding: 2.5rem;
     }
   }
   &_w-50 {

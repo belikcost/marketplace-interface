@@ -59,7 +59,7 @@ export const LoginRegister = ({type, user, handleRequest, handleCloseModal, hand
             <form onSubmit={onSubmit}>
                 {Object.keys(initialData).map((key, i) => (
                     <div className="login-modal_row" key={i}>
-                        <p>{t(`your${toUpperCaseFirst(key)}`)}</p>
+                        <p>{t(key)}</p>
                         <input
                             type={(key === 'email' && key) || (key === 'password' && key) || 'text'}
                             value={sendData[key]}
@@ -70,6 +70,7 @@ export const LoginRegister = ({type, user, handleRequest, handleCloseModal, hand
                     </div>
                 ))}
                 <button>{t(type)}</button>
+                <b>{t('byPhoneNumber')}</b>
             </form>
             {error && (
                 <p>{t(error)}</p>
@@ -78,7 +79,7 @@ export const LoginRegister = ({type, user, handleRequest, handleCloseModal, hand
                 {type === 'signIn' ? (
                     <>
                         <span>{t('forgotPassword')}</span>
-                        <button onClick={handleReverse}>{t('signOut')}</button>
+                        <button onClick={handleReverse}>{t('signUp')}</button>
                     </>
                 ) : (
                     <>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
-import { createHandle } from "../../../utils";
+import { setReverseValue } from "../../../utils";
 
 import Filter from "../Filter";
 import Products from "../../Products";
@@ -58,7 +58,7 @@ const Category = ({shop, currentCategory, icons, filters, handleFilters, product
     const Rating = () => (
         <div className="category__row category_rating">
             <span
-                onClick={() => createHandle(onlyHighRating, setOnlyHighRating)}
+                onClick={() => setReverseValue(onlyHighRating, setOnlyHighRating)}
                 className={`filter-checkbox${onlyHighRating ? ` active` : ``}`}
             />
             <div>
@@ -78,17 +78,17 @@ const Category = ({shop, currentCategory, icons, filters, handleFilters, product
             <Toggler
                 name={t('discounts')}
                 isActive={onlyDiscountItems}
-                handleActive={() => createHandle(onlyDiscountItems, setOnlyDiscountItems)}
+                handleActive={() => setReverseValue(onlyDiscountItems, setOnlyDiscountItems)}
             />
             <Toggler
                 name={t('newItems')}
                 isActive={onlyNewItems}
-                handleActive={() => createHandle(onlyNewItems, setOnlyNewItems)}
+                handleActive={() => setReverseValue(onlyNewItems, setOnlyNewItems)}
             />
             <Toggler
                 name={t('freeDelivery')}
                 isActive={onlyFreeDelivery}
-                handleActive={() => createHandle(onlyFreeDelivery, setOnlyFreeDelivery)}
+                handleActive={() => setReverseValue(onlyFreeDelivery, setOnlyFreeDelivery)}
             />
         </>
     );
@@ -104,7 +104,7 @@ const Category = ({shop, currentCategory, icons, filters, handleFilters, product
                                 <div className="category_modal-container">
                                     <img
                                         src={sortIcon}
-                                        onClick={() => createHandle(isOpenSort, setIsOpenSort)}
+                                        onClick={() => setReverseValue(isOpenSort, setIsOpenSort)}
                                         alt={t('sort')}
                                     />
 
@@ -121,7 +121,7 @@ const Category = ({shop, currentCategory, icons, filters, handleFilters, product
                                 <div className="category_modal-container">
                                     <img
                                         src={filtersIcon}
-                                        onClick={() => createHandle(isOpenFilters, setIsOpenFilters)}
+                                        onClick={() => setReverseValue(isOpenFilters, setIsOpenFilters)}
                                         alt={t('filters')}
                                     />
 

@@ -4,7 +4,7 @@ import { initReactI18next } from "react-i18next";
 const resources = {
     ru: {
         translation: {
-            "signIn": "Войти",
+            "signIn": "Вход",
             "russian": "Русский",
             "english": "Английский",
             "korean": "Корейский",
@@ -210,8 +210,14 @@ const resources = {
             "appliances4": "Бытовая техника",
             "allProducts": "Все товары",
             "allShops": "Все магазины",
-            "showAll": "Показать всё",
-            "hideAll": "Скрыть"
+            "showAll": "Читать полностью",
+            "hideAll": "Скрыть",
+            "password": "Пароль",
+            "byPhoneNumber": "По номеру телефона",
+            "forgotPassword": "Забыли пароль?",
+            "addTrackNumber": "Добавить трек-номер",
+            "trackNumber": "Трек-номер",
+            "enterTrackNumber": "Введите трек-номер"
         }
     },
     'en-US': {

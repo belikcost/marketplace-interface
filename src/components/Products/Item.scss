@@ -27,7 +27,8 @@
   }
   &_old-price {
     @extend %sale-price_old-price;
-    margin-left: .5rem;
+    margin-left: 1rem;
+    font-size: 10px;
   }
   &_line {
     @extend %sale-price_line;

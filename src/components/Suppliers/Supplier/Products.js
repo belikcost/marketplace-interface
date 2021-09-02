@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import { createHandle } from "../../../utils";
+import { setReverseValue } from "../../../utils";
 
 import ProductList from '../../Products';
 
@@ -27,17 +27,17 @@ export const Products = ({products, supplierTitle}) => {
             <Toggler
                 name={t('onlySale')}
                 isActive={onlySale}
-                handleActive={() => createHandle(onlySale, setOnlySale)}
+                handleActive={() => setReverseValue(onlySale, setOnlySale)}
             />
             <Toggler
                 name={t('onlyNew')}
                 isActive={onlyNew}
-                handleActive={() => createHandle(onlyNew, setOnlyNew)}
+                handleActive={() => setReverseValue(onlyNew, setOnlyNew)}
             />
             <Toggler
                 name={t('onlyFreeDelivery')}
                 isActive={onlyFreeDelivery}
-                handleActive={() => createHandle(onlyFreeDelivery, setOnlyFreeDelivery)}
+                handleActive={() => setReverseValue(onlyFreeDelivery, setOnlyFreeDelivery)}
             />
         </>
     );
@@ -59,7 +59,7 @@ export const Products = ({products, supplierTitle}) => {
                         <div className="supplier-page_modal-container">
                             <img
                                 src={sortIcon}
-                                onClick={() => createHandle(modalOpen, setModalOpen)}
+                                onClick={() => setReverseValue(modalOpen, setModalOpen)}
                                 alt={t('sort')}
                             />
 

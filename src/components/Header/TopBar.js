@@ -2,23 +2,46 @@ import { useEffect, useState } from "react";
 import i18next from 'i18next';
 import { useTranslation } from "react-i18next";
 
-const dynamicImport = async (url) => {
-    return await import(`/src/img/${url}.svg`);
-}
+import Select from "../../base/Select";
+import { languages } from "../../constants";
+import { setReverseValue } from "../../utils";
+
+
+
 
 export const TopBar = () => {
-    const { t } = useTranslation();
-    const [flagIcon, setFlagIcon] = useState();
+    const {t} = useTranslation();
+    const [countryIcons, setCountryIcons] = useState({});
+    const [showOptions, setShowOptions] = useState(false);
     const iso = i18next.language;
 
-    const changeLang = (e) => {
-        console.log(e);
-        i18next.changeLanguage(e.target.value).then(console.log);
+    const changeLang = (value) => {
+        i18next.changeLanguage(value).then(console.log);
+        setShowOptions(false);
+    };
+
+    const buildRow = (iso) => ` | ${t(languages.find(lang => lang.value === iso).name)} | ₽`;
+
+    const dynamicImportIcons = async (languages) => {
+        let countryIcons = {};
+        await languages.map(async language => {
+            await import(`/src/img/${language.value}.svg`).then(r => countryIcons[language.value] = r.default);
+        })
+        return countryIcons;
     }
 
     useEffect(() => {
-        dynamicImport(iso).then(r => setFlagIcon(r.default));
-    }, []);
+        dynamicImportIcons(languages).then(setCountryIcons);
+    }, [languages]);
+
+    const Option = ({iso, isActive, onClick}) => (
+        <span className={`lang-option${isActive ? ' active' : ''}`} onClick={onClick}>
+            {countryIcons[iso] && (
+                <img src={countryIcons[iso]} alt={iso}/>
+            )}
+            {buildRow(iso)}
+        </span>
+    );
 
     return (
         <div className="nav">
@@ -33,20 +56,19 @@ export const TopBar = () => {
                     <a href="/">{t("faq")}</a>
                 </li>
             </ul>
-            <div className="lang">
-                {flagIcon && (
-                    <img src={flagIcon} alt={iso}/>
+            <div>
+                <Option iso={iso} isActive={true} onClick={() => setReverseValue(showOptions, setShowOptions)}/>
+                {showOptions && (
+                    <div className="dropdown-options">
+                        {languages.map((language) => (
+                            <Option
+                                iso={language.value}
+                                onClick={() => changeLang(language.value)}
+                                key={language.value}
+                            />
+                        ))}
+                    </div>
                 )}
-
-                <select value={iso} onChange={changeLang}>
-                    <option value="ru">{t('russian')}</option>
-                    <option value="en-US">{t('english')}</option>
-                    <option value="ko">{t('korean')}</option>
-                </select>
-
-                <select defaultValue="rub">
-                    <option value="rub">₽</option>
-                </select>
             </div>
         </div>
     );

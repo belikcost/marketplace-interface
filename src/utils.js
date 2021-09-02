@@ -19,4 +19,4 @@ export const calculateSalePrice = (price, sale) => Math.round(price - price * (s
 
 export const calculateTotalRating = (rating) => Math.floor(rating.reduce((prev, current) => +current + +prev) / rating.length);
 
-export const createHandle = (value, setter) => setter(!value);
+export const setReverseValue = (value, setter) => setter(!value);

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
 import { ratingStars } from "../../constants";
@@ -8,9 +8,12 @@ import Modal from "../Modal";
 
 import { StarsGroup } from "../../components/Catalog/Product/StarsGroup";
 
+import galleryIcon from '/src/img/gallery 1.svg';
+
 
 export const SendReviewModal = ({image, title, handleCloseModal}) => {
     const {t} = useTranslation();
+    const fileInput = useRef();
     const ratingStarsKeys = Object.keys(ratingStars);
 
     const initialReviewData = {
@@ -91,13 +94,15 @@ export const SendReviewModal = ({image, title, handleCloseModal}) => {
                 placeholder={t('yourText')}
             />
             <h4>{t('addPhotos')}</h4>
-            <input
-                type="file"
-                accept=".jpg, .jpeg, .png"
-                multiple={true}
-                value={undefined}
-                onChange={(e) => handleSetImages(e.target.files)}
-            />
+            <div className="product-review-modal__load">
+                <img src={galleryIcon} onClick={() => fileInput.current.click()} alt={t('addImages')}/>
+                <input
+                    type="file"
+                    accept=".jpg, .jpeg, .png"
+                    ref={fileInput}
+                    onChange={(e) => handleSetImages(e.target.files)}
+                />
+            </div>
             <div className="product-review-modal__footer">
                 <button>{t('sendReview')}</button>
             </div>

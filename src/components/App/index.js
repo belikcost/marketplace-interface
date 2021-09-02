@@ -7,6 +7,9 @@ import Products from "../Products";
 import Suppliers from "../Suppliers";
 import Articles from "../Articles";
 
+import bannerFirst from '/src/img/image 13.jpg';
+import bannerSecond from '/src/img/image 14.jpg'
+
 import './index.scss';
 
 
@@ -30,7 +33,13 @@ const App = ({products, suppliers, handleGetSuppliers, articles}) => {
                     </section>
                     <section>
                         <h1>{t('ourShops')}</h1>
-                        <Suppliers suppliers={suppliers} handleGetSuppliers={handleGetSuppliers}/>
+                        <div className="homepage__suppliers">
+                            <Suppliers suppliers={suppliers} handleGetSuppliers={handleGetSuppliers}/>
+                            <div className="homepage__banner-group">
+                                <img src={bannerFirst} alt="bannerFirst"/>
+                                <img src={bannerSecond} alt="bannerSecond"/>
+                            </div>
+                        </div>
                         <Link to="/articles" className="homepage_link">
                             {t('allShops')}
                         </Link>
@@ -44,7 +53,12 @@ const App = ({products, suppliers, handleGetSuppliers, articles}) => {
                     </section>
                     <section>
                         <h1>{t('aboutUs')}</h1>
-                        <p>{showAll ? aboutUsText : `${aboutUsText.substr(0, 200)}...`}</p>
+                        <p className="homepage_text">
+                            {showAll ? aboutUsText : `${aboutUsText.substr(0, 600)}...`}
+                            {!showAll && (
+                                <div className="homepage_hide-shadow"/>
+                            )}
+                        </p>
                         <b onClick={() => setShowAll(!showAll)}>
                             {showAll ? (t('hideAll')) : (t('showAll'))}
                         </b>

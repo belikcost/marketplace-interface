@@ -5,9 +5,11 @@ import { Route, useRouteMatch } from "react-router-dom";
 import { TrackModal } from "./TrackModal";
 import { Order } from "../Order";
 
+import { Search } from "../../../../base/Fields/Search";
+
 import cancelIcon from '/src/img/Mini_button_cancel.svg';
 import sendTrackIcon from '/src/img/mini_button_send.svg';
-import searchIcon from '/src/img/loop.svg';
+
 
 
 export const List = ({locale, list}) => {
@@ -36,13 +38,7 @@ export const List = ({locale, list}) => {
     return (
         <>
             <div className="order-list">
-                <div className="order-list__search">
-                    <input type="date" placeholder={t('chooseOrderDate')}/>
-                    <label>
-                        <input type="text" value={searchString} onChange={onChange} placeholder={t('enterOrderIdOrProductName')}/>
-                        <img src={searchIcon} alt={t('send')}/>
-                    </label>
-                </div>
+                <Search/>
                 {list.map(order => (
                     <Order
                         locale={locale}

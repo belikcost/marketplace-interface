@@ -4,7 +4,6 @@
 }
 
 .suppliers {
-  margin: 2rem 0;
   display: flex;
   flex-wrap: wrap;
 }
@@ -16,7 +15,7 @@
   box-shadow: 0 4px 40px rgba(0, 0, 0, 0.12);
   background: #fff;
   margin: 0 1.5rem 1.5rem 0;
-  padding: .5rem 1rem;
+  padding: 1.5rem 1rem;
   &__header {
     @extend %row;
     img {
@@ -28,11 +27,13 @@
     text-transform: uppercase;
     color: #000;
     font-weight: normal;
+    font-size: 24px;
+    margin: 0 .5rem;
   }
   &__body {
     @extend %row;
     img {
-      width: 50px;
+      width: 80px;
       margin: .25rem;
     }
   }

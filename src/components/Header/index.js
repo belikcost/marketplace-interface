@@ -77,7 +77,10 @@ const Header = ({shop, user, handleLoginRequest, handleSignOut, handleRegisterRe
                                 <img src={logoIcon} alt="logo"/>
                             </Link>
                         </div>
-                        <input type="search"/>
+                        <div className="header-search">
+                            <span>Везде</span>
+                            <input type="search"/>
+                        </div>
                         <ul className="section main__column">
                             <li>
                                 <img src={userIcon} alt="user"/>

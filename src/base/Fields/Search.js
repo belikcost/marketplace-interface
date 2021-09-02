@@ -24,7 +24,6 @@ export const Search = () => {
                     type="text"
                     value={searchString}
                     onChange={onChange}
-                    placeholder={t('enterOrderIdOrProductName')}
                 />
                 <img src={searchIcon} alt={t('send')}/>
             </label>

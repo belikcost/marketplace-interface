@@ -10,9 +10,9 @@ const Modal = ({title, handleCloseModal, className, children}) => {
     return (
         <div className="modal__container">
             <div className={`modal ${className}`}>
+                <img src={closeIcon} onClick={handleCloseModal} className="modal__close" alt={t('close')}/>
                 <div className="modal__title">
                     <h1>{title}</h1>
-                    <img src={closeIcon} onClick={handleCloseModal} alt={t('close')}/>
                 </div>
                 {children}
             </div>
